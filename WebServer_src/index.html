@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.12.3.min.js"></script>
+        <script type="text/javascript" src="resources/socket.io.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript">
+            var client_socket = io.connect("http://10.42.0.1:8002");
+             
+               client_socket.on('image', function (data) {
+                $("#video").attr("src", "data:image/jpeg;base64," + data.toString("base64") );
+                });
+            
+          
+               client_socket.on('date', function(data){
+                $('#date').text("Server Time and Date : " + data.date );
+                });
+
+              $(document).ready(function(){
+                $('#Left').click(function () {
+                    client_socket.emit('message','Left');
+                })
+
+                 $('#Right').click(function () {
+                    client_socket.emit('message','Right');
+                })
+
+                $('#Up').click(function () {
+                    client_socket.emit('message','Up');
+                })
+
+               $('#Down').click(function () {
+                    client_socket.emit('message','Down');
+                })
+               $('#zoom_plus').click(function () {
+                    client_socket.emit('message','plus');
+                })
+               $('#zoom_minus').click(function () {
+                    client_socket.emit('message','minus');
+                })
+               $('#auto_track').click(function () {
+                    client_socket.emit('message','track');
+                })
+               $('#record').click(function () {
+                    client_socket.emit('message','record');
+                })
+              
+
+         });
+     
+          </script>
+    </head>
+
+    <body>
+
+      <center> <h1>MMNET PTZ CAMERA STREAMING AND CONTROL</h1>  </center> 
+      <img id="video"  src="" />
+      <div id="date"></div>
+      <p><input type="button" value="Left" id="Left" /></p>
+      <p><input type="button" value="Right" id="Right" /></p>
+      <p><input type="button" value="Up" id="Up" /></p>
+      <p><input type="button" value="Down" id="Down" /></p>
+      <p><input type="button" value="Zoom+" id="zoom_plus" /></p>
+      <p><input type="button" value="Zoom-" id="zoom_minus" /></p>
+      <p><input type="button" value="Auto Track" id="auto_track" /></p>
+      <p><input type="button" value="Rec" id="record" /></p>
+      
+    
+    </body>
+</html>
