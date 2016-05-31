@@ -1,0 +1,87 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="100"
+    tools:context="com.pestostech.team09.RtspViewFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="70"
+        android:background="#000000">
+
+        <VideoView
+            android:id="@+id/myVideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="30"
+        android:layout_marginTop="10dp">
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Zoom in"
+            android:id="@+id/bnZoomIn"
+            android:layout_toRightOf="@+id/bnUp"
+            android:background="#3c3f41"
+            android:textColor="#ffffff"/>
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Zoom out"
+            android:id="@+id/bnZoomOut"
+            android:layout_toRightOf="@id/bnUp"
+            android:layout_below="@+id/bnZoomIn"
+            android:background="#3c3f41"
+            android:textColor="#ffffff"/>
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="65dp"
+            android:layout_height="100dp"
+            android:text="Left"
+            android:id="@+id/bnLeft"
+            android:background="#3c3f41"
+            android:textColor="#ffffff"/>
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="65dp"
+            android:layout_height="100dp"
+            android:text="Right"
+            android:id="@+id/bnRight"
+            android:layout_toRightOf="@id/bnLeft"
+            android:background="#3c3f41"
+            android:textColor="#ffffff"/>
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Up"
+            android:id="@+id/bnUp"
+            android:layout_toRightOf="@id/bnRight"
+            android:background="#3c3f41"
+            android:textColor="#ffffff"/>
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Down"
+            android:id="@+id/bnDown"
+            android:layout_toRightOf="@id/bnRight"
+            android:layout_below="@id/bnUp"
+            android:background="#3c3f41"
+            android:textColor="#ffffff"/>
+    </RelativeLayout>
+
+</LinearLayout>
